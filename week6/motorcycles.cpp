@@ -1,3 +1,4 @@
+///4
 #include <iostream>
 #include <vector>
 
@@ -56,7 +57,7 @@ int main() {
       D curr(it->first);
       int currIdx = it->second;
       
-      if (curr.counterclockwise_in_between(negBest, posBest) || curr == posBest) {
+      if (best.dy() != 0 && (curr.counterclockwise_in_between(negBest, posBest) || curr == posBest)) {
         best = curr;
         posBest = posDir(best);
         negBest = negDir(best);
@@ -74,7 +75,7 @@ int main() {
       D curr(rit->first);
       int currIdx = rit->second;
       
-      if (curr.counterclockwise_in_between(negBest, posBest) || curr == posBest || curr == negBest) {
+      if (best.dy() != 0 && (curr.counterclockwise_in_between(negBest, posBest) || curr == posBest || curr == negBest)) {
         best = curr;
         posBest = posDir(best);
         negBest = negDir(best);
